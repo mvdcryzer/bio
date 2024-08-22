@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #0d0d0d;
+    color: #f1f1f1;
+    overflow: hidden; /* Предотвращение прокрутки */
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+    background-size: cover;
+}
+
+.container {
+    position: relative;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(20, 20, 20, 0.95); /* Сделаем фон немного прозрачным */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    border: 1px solid #444;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    filter: grayscale(100%); /* Черно-белая иконка */
+}
+
+.glitch {
+    font-size: 2em;
+    color: #ffffff;
+    position: relative;
+    animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+.content p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.content ul li {
+    font-size: 1.1em;
+    margin: 5px 0;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #222;
+    color: #f1f1f1;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #444;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: #555;
+    transition: 0.4s ease;
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
+.button:hover::before {
+    top: 0%;
+    left: 0%;
+}
+
+.button:hover {
+    color: #000;
+    background-color: #999;
+    border-color: #999;
+    text-shadow: none;
+    box-shadow: 0 0 10px #999;
+}
+
+.button:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 5px #999;
+}
